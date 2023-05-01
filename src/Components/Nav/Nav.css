@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  gap: 0px 12px;
+  padding: 10px 16px;
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 50px;
+  color: white;
+  position: sticky;
+  top: 24px;
+  z-index: 1;
+}
+
+.nav li {
+  padding: 6px 26px;
+  border-radius: 50px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.overlay {
+  position: absolute;
+  height: 27px;
+  width: 47px;
+  padding: 6px 26px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+}

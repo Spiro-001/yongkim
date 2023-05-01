@@ -15,9 +15,22 @@ function App() {
   const blockRef = useRef(null);
   const graphRef = useRef(null);
   const badgeRef = useRef(null);
+  const timelineNoteRef = useRef(null);
 
   const [menuState, setMenuState] = useState(1);
   const [loaded, setLoaded] = useState(false);
+
+  const hoverTimeline = (element) => {
+    if (element.currentTarget.className === element.target.className) {
+      timelineNoteRef.current = element.currentTarget.children[0];
+      gsap.fromTo(timelineNoteRef.current, { opacity: 0 }, { opacity: 1 });
+    }
+  };
+
+  const unHoverTimeline = () => {
+    gsap.fromTo(timelineNoteRef.current, { opacity: 1 }, { opacity: 0 });
+    timelineNoteRef.current = null;
+  };
 
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
@@ -222,14 +235,114 @@ function App() {
               <div className="row" ref={graphRef}>
                 <div className="graph">
                   <div className="content">
-                    <div className="timeline a">Minecraft Mod Development</div>
-                    <div className="timeline b">Unity Game Development</div>
-                    <div className="timeline c">
-                      Unreal Engine Game Development
+                    <div
+                      className="timeline a"
+                      onMouseEnter={hoverTimeline}
+                      onMouseLeave={unHoverTimeline}
+                    >
+                      Minecraft Mod Development
+                      <div className="container mc tl">
+                        <span className="small-text">RPGWeapons+</span>
+                        <p className="mini-text">
+                          Contributed to the creation of a weapons modpack
+                          called RPGWeapons+ in 2014. I developed item assets
+                          through Adobe Photoshop and helped integrate the items
+                          into the game. Using Java I used Minecraft's rendering
+                          system to render newly made items into the game.
+                        </p>
+                      </div>
                     </div>
-                    <div className="timeline d">Tech Analyst</div>
-                    <div className="timeline e">Computer Vision Engineer</div>
-                    <div className="timeline f">E-Commerce Web Development</div>
+                    <div
+                      className="timeline b"
+                      onMouseEnter={hoverTimeline}
+                      onMouseLeave={unHoverTimeline}
+                    >
+                      Unity Game Development
+                      <div className="container ug tl">
+                        <span className="small-text">Text2Fight</span>
+                        <p className="mini-text">
+                          A text based RPG game made using the Unity engine.
+                          Created over 100+ items, 5 different classes with
+                          stats that factored into gameplay, and created my own
+                          assets. Unity used C# and this was great class
+                          creation practice. I additionally composed my own
+                          soundtrack and material assets.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="timeline c"
+                      onMouseEnter={hoverTimeline}
+                      onMouseLeave={unHoverTimeline}
+                    >
+                      Unreal Engine Game Development
+                      <div className="container ue tl">
+                        <span className="small-text">Final Fight</span>
+                        <p className="mini-text">
+                          A 3D multiplayer quick combat fighter that revolved
+                          its gameplay around its own custom movement mechanic.
+                          The movement mechanic was based on a game known as
+                          GunZ the duel and CSGO. This was built using Unreal
+                          Engine 4, development consisted of Unreal Engine's
+                          Blueprint system and C++. Assets were made through
+                          Blender, creating low poly meshes and mobilized
+                          through AutoCAD Maya.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="timeline d"
+                      onMouseEnter={hoverTimeline}
+                      onMouseLeave={unHoverTimeline}
+                    >
+                      Tech Analyst
+                      <div className="container ta tl">
+                        <span className="small-text">
+                          Consult Your Community
+                        </span>
+                        <p className="mini-text">
+                          A non-profit organization whos main purpose is to
+                          support small businesses succeed in their industry.
+                          I've work with clothing brands, art galleries, music
+                          businesses and small tech startups.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="timeline e"
+                      onMouseEnter={hoverTimeline}
+                      onMouseLeave={unHoverTimeline}
+                    >
+                      Computer Vision Engineer
+                      <div className="container cv tl">
+                        <span className="small-text">Contracted</span>
+                        <p className="mini-text">
+                          A metal flask manufacturing company that needed a QA
+                          system that would check the flask for any defects.
+                          Using Python, OpenCV, and YOLOv8 I created a learning
+                          model that would detect and defects with a 98%
+                          accuracy. The model was trained using over 1000+
+                          photos of flask with defects and no defects in
+                          different lighting and angles.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="timeline f"
+                      onMouseEnter={hoverTimeline}
+                      onMouseLeave={unHoverTimeline}
+                    >
+                      E-Commerce Web Development
+                      <div className="container wd tl">
+                        <span className="small-text">Contracted</span>
+                        <p className="mini-text">
+                          An e-commerce website that sold various amounts of
+                          clothing. I worked on the UI and payment API for the
+                          website. Created 6 different layouts for the shop
+                          using React.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   <div className="x">
                     <li>2014</li>
@@ -249,12 +362,38 @@ function App() {
           </>
         )}
         {menuState === 3 && (
-          <div className="row development" ref={mainRef}>
-            <div className="row">
-              <img src={fox} alt="under-mait" className="fox" />
-              <div className="column">
-                <p className="big-text bold dvt">In Development</p>
-                <p className="small-text wt rt">Come back soon!</p>
+          <div className="column-center" ref={mainRef}>
+            <div className="row development">
+              <div className="row">
+                <img src={fox} alt="under-mait" className="fox" />
+                <div className="column">
+                  <p className="big-text bold dvt">In Development</p>
+                  <p className="small-text wt rt">Come back soon!</p>
+                </div>
+              </div>
+            </div>
+            <div className="row-start-80">
+              <div className="bubble column">
+                <span className="med-text tm">Timeless Message</span>
+                <span className="mini-text tmd">
+                  An AI based vocal synthesizer that creates messages in the
+                  voices of passed loved ones.
+                </span>
+              </div>
+              <div className="bubble column">
+                <span className="med-text tm">80 YAMA</span>
+                <span className="mini-text tmd">
+                  80's retro synthesizer with filters, effects, and MIDI
+                  support.
+                </span>
+              </div>
+              <div className="bubble column">
+                <span className="med-text tm">Pic2Pass</span>
+                <span className="mini-text tmd">
+                  A encryption system that uses principles like zero proof
+                  knowledge to turn your data into color maps which are only
+                  recognizable to the computer.
+                </span>
               </div>
             </div>
           </div>
@@ -265,9 +404,7 @@ function App() {
               <div className="container">
                 <span className="big-text bold cit">Contact Info</span>
                 <div className="column">
-                  <li className="med-text wt rt">
-                    Email • yong.kim020901@gmail.com
-                  </li>
+                  <li className="med-text wt rt">yong.kim020901@gmail.com</li>
                 </div>
               </div>
             </div>
@@ -277,8 +414,7 @@ function App() {
               <br />
               <br />
               If you're a recruiter or direct hire, please feel free to message
-              me on LinkedIn or you can also send me an email. I'll try and
-              respond to you ASAP!
+              me on LinkedIn or you can also send me an email.
             </p>
           </div>
         )}

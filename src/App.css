@@ -129,6 +129,13 @@ body {
   width: 100%;
 }
 
+.column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 #highlight {
   color: rgb(129, 179, 255);
 }
@@ -156,6 +163,17 @@ body {
   align-content: center;
 }
 
+.row-start-80 {
+  display: flex;
+  flex-direction: row;
+  padding: 24px 0px;
+  gap: 0px 48px;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  width: 80%;
+}
+
 .icons {
   width: 80%;
 }
@@ -167,7 +185,7 @@ body {
 
 .content {
   display: grid;
-  grid-template-columns: repeat(20, 74.2px);
+  grid-template-columns: repeat(20, 5%);
   grid-template-rows: repeat(6, 75px);
   position: relative;
   background-color: white;
@@ -178,6 +196,7 @@ body {
   background-size: 37.1px 37.1px;
   background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
   grid-gap: 12px 0px;
+  cursor: default;
 }
 
 .timeline {
@@ -196,7 +215,7 @@ body {
 .x {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(10, 148.4px);
+  grid-template-columns: repeat(10, 10%);
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
@@ -298,6 +317,7 @@ a:hover {
 
 .cit {
   color: rgb(163, 255, 234);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .column-80 {
@@ -307,5 +327,63 @@ a:hover {
 }
 
 .rh {
-  color: rgb(255, 192, 192);
+  color: rgb(255, 162, 162);
+  padding-bottom: 128px;
+}
+
+.tl {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 24px;
+  border-radius: 24px;
+  color: white;
+  z-index: 2;
+  opacity: 1;
+  width: 200px;
+  opacity: 0;
+}
+
+.mini-text {
+  font-size: 16px;
+}
+
+.mc {
+  background-color: #974a0c;
+}
+
+.ug {
+  background-color: rgb(180, 180, 180);
+}
+
+.ue {
+  background-color: black;
+}
+
+.wd {
+  background-color: rgb(243, 166, 255);
+}
+
+.ta {
+  background-color: rgb(144, 144, 255);
+}
+
+.cv {
+  background-color: rgb(255, 215, 156);
+}
+
+.bubble {
+  background-color: rgb(200, 195, 255);
+  padding: 12px 24px;
+  border-radius: 24px;
+  width: fit-content;
+}
+
+.tm {
+  color: rgb(98, 98, 251);
+}
+
+.tmd {
+  padding-top: 24px;
+  color: rgb(255, 255, 255);
 }

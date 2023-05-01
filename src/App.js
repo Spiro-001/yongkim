@@ -168,7 +168,7 @@ function App() {
           <>
             <span className="big-text bold ct mt" ref={mainRef}>
               <img src={stars} alt="stars" className="stars" id="star-one" />
-              Hello! I'm Daniel.
+              Hello! I'm Yong.
               <br />A Software Developer.
               <img src={stars} alt="stars" className="stars" id="star-two" />
             </span>
@@ -183,7 +183,7 @@ function App() {
           <>
             <div className="about">
               <span className="big-text bold ct mt at" ref={mainRef}>
-                I'm Daniel.
+                I'm Yong.
               </span>
               <div className="row" ref={descriptionRef}>
                 <img src={pfp} alt="self" className="pfp" />
